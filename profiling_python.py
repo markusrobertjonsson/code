@@ -12,7 +12,7 @@ pr.enable()
 pr.disable()
 s = io.StringIO()
 ps = pstats.Stats(pr, stream=s).sort_stats(stats.SortKey.CUMULATIVE)
-ps.print_stats(10)
+ps.print_stats(10)  # Number of lines in output
 print(s.getvalue())
 
 
