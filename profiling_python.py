@@ -1,5 +1,7 @@
 # In Python 3.10.5
 
+import io
+import stats
 import cProfile
 
 pr = cProfile.Profile()
@@ -9,7 +11,7 @@ pr.enable()
 
 pr.disable()
 s = io.StringIO()
-ps = pstats.Stats(pr, stream=s).sort_stats(SortKey.CUMULATIVE)
+ps = pstats.Stats(pr, stream=s).sort_stats(stats.SortKey.CUMULATIVE)
 ps.print_stats(10)
 print(s.getvalue())
 
